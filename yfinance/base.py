@@ -514,14 +514,14 @@ class TickerBase():
 
     def get_financials(self, proxy=None, as_dict=False, freq="yearly"):
         self._get_fundamentals(proxy)
-        data = self._financials[freq]
+        data = self._financials
         if as_dict:
             return data.to_dict()
         return data
 
     def get_balancesheet(self, proxy=None, as_dict=False, freq="yearly"):
         self._get_fundamentals(proxy)
-        data = self._balancesheet[freq]
+        data = self._balancesheet
         if as_dict:
             return data.to_dict()
         return data
@@ -531,7 +531,7 @@ class TickerBase():
 
     def get_cashflow(self, proxy=None, as_dict=False, freq="yearly"):
         self._get_fundamentals(proxy)
-        data = self._cashflow[freq]
+        data = self._cashflow
         if as_dict:
             return data.to_dict()
         return data
