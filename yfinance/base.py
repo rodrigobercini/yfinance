@@ -73,7 +73,7 @@ def parse_rows(table_rows):
                 (text,) = rs.xpath('.//span/text()[1]')
                 parsed_row.append(text)
             except ValueError:
-                parsed_row.append(np.NaN)
+                parsed_row.append(_np.NaN)
                 none_count += 1
 
         if (none_count < 4):
@@ -94,7 +94,7 @@ def clean_data(df):
 
     for column_index in range(1, len(df.columns)): # Take all columns, except the first (which is the 'Date' column)
         df.iloc[:,column_index] = df.iloc[:,column_index].str.replace(',', '') # Remove the thousands separator
-        df.iloc[:,column_index] = df.iloc[:,column_index].astype(np.float64) # Convert the column to float64
+        df.iloc[:,column_index] = df.iloc[:,column_index].astype(_np.float64) # Convert the column to float64
     df.index = df['Date']
     df.drop('Date', axis=1, inplace=True)
     df = df.transpose()
