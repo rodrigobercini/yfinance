@@ -79,7 +79,7 @@ def parse_rows(table_rows):
         if (none_count < 4):
             parsed_rows.append(parsed_row)
             
-    return pd.DataFrame(parsed_rows)
+    return _pd.DataFrame(parsed_rows)
 
 def clean_data(df):
     df = df.set_index(0) # Set the index to the first column: 'Period Ending'.
