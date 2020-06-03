@@ -444,9 +444,9 @@ class TickerBase():
         data = utils.get_json(url+'/financials', proxy)
 
         # generic patterns
-        self._cashflow = scrape_table(f'https://finance.yahoo.com/quote/{ticker}/cash-flow?p={ticker}')
-        self._balancesheet = scrape_table(f'https://finance.yahoo.com/quote/{ticker}/balance-sheet?p={ticker}')
-        self._financials = scrape_table(f'https://finance.yahoo.com/quote/{ticker}/financials?p={ticker}')
+        self._cashflow = scrape_table(f'https://finance.yahoo.com/quote/{self.ticker}/cash-flow?p={self.ticker}')
+        self._balancesheet = scrape_table(f'https://finance.yahoo.com/quote/{self.ticker}/balance-sheet?p={self.ticker}')
+        self._financials = scrape_table(f'https://finance.yahoo.com/quote/{self.ticker}/financials?p={self.ticker}')
 
         # earnings
         if isinstance(data.get('earnings'), dict):
